@@ -5,16 +5,6 @@ from odoo import _, api, fields, models, fields
 class MRPProduction(models.Model):
     _inherit = 'mrp.production'
 
-    weight_net = fields.Float(
-    )
-    waste = fields.Float(
-        string='Waste (%)',
-    )
-    weight_total = fields.Float(
-        compute='_compute_weight_total',
-    )
-    meters = fields.Float(
-    )
     man_hour = fields.Float(
     )
     rent = fields.Float(
@@ -30,11 +20,6 @@ class MRPProduction(models.Model):
     cost_total = fields.Float(
         compute='_compute_cost_total',
     )
-
-    @api.depends('weight_net', 'waste')
-    def _compute_weight_total(self):
-        for r in self:
-            r.weight_total = (1 + r.waste / 100) * r.weight_net
 
     @api.depends('move_raw_ids', 'man_hour', 'rent', 'transport')
     def _compute_cost(self):

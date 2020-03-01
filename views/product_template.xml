@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="product_template_meassures_view_form" model="ir.ui.view">
+        <field name="name">product.template.meassures.view.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_template_property_form"/>
+        <field name="arch" type="xml">
+            <div name="weight" position="after">
+                <field name="waste"/>
+                <field name="weight_total"/>
+                <field name="meters"/>
+            </div>
+        </field>
+    </record>
+</odoo>
