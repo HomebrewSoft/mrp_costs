@@ -8,18 +8,11 @@ class MRPBOM(models.Model):
     waste = fields.Float(
         string='Waste (%)',
     )
-    default_code = fields.Char(
-        related='product_tmpl_id.default_code',
+    produced = fields.Float(
+        compute='_get_produced',
     )
-    uom_id = fields.Many2one(
-        related='product_tmpl_id.uom_id',
-    )
-    weight = fields.Float(
-        related='product_tmpl_id.weight',
-    )
-    weight_total = fields.Float(
-        related='product_tmpl_id.weight_total',
-    )
-    meters = fields.Float(
-        related='product_tmpl_id.meters',
-    )
+
+    def _get_produced(self):
+        for record in self:
+            if record.routing_id:
+                record.produced = record.routing_id._get_produced_by_product_ids(record.product_tmpl_id.product_variant_ids.ids)

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from . import mrp_routing
 from . import mrp_bom
 from . import product_template
 from . import stock_pack_operation

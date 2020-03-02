@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="mrp_production_cost_view_form" model="ir.ui.view">
+
+    <record id="mrp_production_view_tree" model="ir.ui.view">
+        <field name="name">Costs</field>
+        <field name="model">mrp.production</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false">
+                <field name="state" invisible="1"/>
+                <field name="default_code"/>
+                <field name="product_id"/>
+                <field name="uom_id"/>
+                <field name="weight"/>
+                <field name="waste"/>
+                <field name="weight_total"/>
+                <field name="meters"/>
+                <field name="man_hour"/>
+                <field name="rent"/>
+                <field name="transport"/>
+                <field name="cost"/>
+                <field name="sale_cost"/>
+                <field name="cost_total"/>
+                <field name="produced"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mrp_cost_action" model="ir.actions.act_window">
+        <field name="name">Costs</field>
+        <field name="res_model">mrp.production</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="mrp_production_view_tree"/>
+    </record>
+
+    <menuitem id="mrp_cost" parent="mrp.menu_mrp_reporting" name="Costs" action="mrp_cost_action"/>
+
+    <!-- <record id="mrp_production_cost_view_form" model="ir.ui.view">
         <field name="name">mrp.production.cost.view.form</field>
         <field name="model">mrp.production</field>
         <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
@@ -32,5 +67,5 @@
                 </page>
             </notebook>
         </field>
-    </record>
+    </record> -->
 </odoo>
