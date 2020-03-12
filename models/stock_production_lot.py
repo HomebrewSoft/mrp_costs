@@ -16,4 +16,5 @@ class StockProductionLot(models.Model):
     @api.depends('operation_lot_ids')
     def _get_cost_unit(self):
         for r in self:
-            r.cost_unit = r.operation_lot_ids[0].cost_unit
+            if r.operation_lot_ids:
+                r.cost_unit = r.operation_lot_ids[0].cost_unit

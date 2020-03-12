@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'MRP Costs',
-    'version': '0.2.0',
+    'version': '0.2.1',
     'author': 'HomebrewSoft',
     'website': 'https://github.com/HomebrewSoft/mrp_costs',
     'depends': [
