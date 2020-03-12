@@ -11,6 +11,7 @@ class MRPProduction(models.Model):
     man_hour = fields.Float(  # TODO
     )
     rent = fields.Float(  # TODO
+        compute='_compute_rent',
     )
     transport = fields.Float(  # TODO
     )
@@ -61,3 +62,9 @@ class MRPProduction(models.Model):
     def _compute_cost_total(self):
         for record in self:
             record.cost_total = record.cost + record.sale_cost
+    
+    @api.depends('routing_id.rent_kilo', 'weight', 'move_finished_ids.quantity_done')
+    def _compute_rent(self):
+        for record in self:
+            if record.routing_id:
+                record.rent = record.routing_id.rent_kilo * record.weight * sum(map(lambda move: move.quantity_done, record.move_finished_ids))

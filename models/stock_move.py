@@ -8,7 +8,10 @@ class StockMove(models.Model):
     cost_unit = fields.Float(
         compute='_compute_cost_unit',
     )
-
+    routing_id = fields.Many2one(
+        related='production_id.routing_id'
+    )
+    
     @api.depends('product_id', 'move_lot_ids', 'product_id.weight')
     def _compute_cost_unit(self):
         for r in self:

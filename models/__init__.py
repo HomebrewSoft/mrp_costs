@@ -8,3 +8,4 @@ from . import stock_production_lot
 from . import stock_move_lots
 from . import stock_move
 from . import mrp_production
+from . import mrp_costs_wizard

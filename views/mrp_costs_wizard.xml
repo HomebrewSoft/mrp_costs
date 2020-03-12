@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="mrp_costs_wizard_form_view" model="ir.ui.view">
+        <field name="name">mrp.costs.wizard.form</field>
+        <field name="model">mrp.costs_wizard</field>
+        <field name="arch" type="xml">
+            <form string="Set Costs">
+                <group col="4">    
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </group>
+                <group>
+                    <field name="rent"/>
+                </group>
+
+                <footer>
+                    <button name="calculate" type="object"
+                            string="Calculate" class="oe_highlight"/>
+                    or
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+    <act_window id="mrp_costs_wizard_action" name="Set Costs" res_model="mrp.costs_wizard" view_mode="form" target="new"/>
+    
+    <menuitem id="costs_menu" name="Rent Cost" parent="mrp.menu_mrp_configuration" action="mrp_costs_wizard_action"/>
+</odoo>

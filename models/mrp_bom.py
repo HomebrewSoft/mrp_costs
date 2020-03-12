@@ -11,7 +11,11 @@ class MRPBOM(models.Model):
     produced = fields.Float(
         compute='_get_produced',
     )
-
+    production_ids = fields.One2many(
+        comodel_name='mrp.production',
+        inverse_name='bom_id',
+    )
+    
     def _get_produced(self):
         for record in self:
             if record.routing_id:
