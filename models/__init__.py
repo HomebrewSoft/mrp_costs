@@ -9,3 +9,5 @@ from . import stock_move_lots
 from . import stock_move
 from . import mrp_production
 from . import mrp_costs_wizard
+from . import res_company
+from . import mrp_config

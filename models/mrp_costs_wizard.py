@@ -15,9 +15,8 @@ class MRPCostsWizard(models.TransientModel):
     date_end = fields.Datetime(
         #default=fields.Date.context_today,
         required=True,
-    )
-
-
+    )    
+    
     @api.multi
     def calculate(self):
         routing_ids = self.env['mrp.routing'].search([])
