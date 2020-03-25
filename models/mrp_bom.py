@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import _, api, fields, models, fields
+from odoo import _, api, fields, models
 
 
 class MRPBOM(models.Model):
@@ -15,7 +15,7 @@ class MRPBOM(models.Model):
         comodel_name='mrp.production',
         inverse_name='bom_id',
     )
-    
+
     def _get_produced(self):
         for record in self:
             if record.routing_id:

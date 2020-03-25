@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-from odoo import _, api, fields, models, fields
+from odoo import _, api, fields, models
 
 
 class MRPRouting(models.Model):
     _inherit = 'mrp.routing'
-    
+
     rent_kilo = fields.Float(
     )
-    
+
     def _get_produced_by_product_ids(self, product_ids):
         for record in self:
             workorder_ids = record.operation_ids.mapped('workorder_ids')

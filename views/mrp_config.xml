@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record model="ir.ui.view" id="mrp_config_rent_view_form">
         <field name="name">mrp.config.rent.view.form</field>
@@ -6,7 +6,7 @@
         <field name="model">mrp.config.settings</field>
         <field name="arch" type="xml">
             <group name="logistics" position="before">
-                <group string="Costs Rent" name="rent_costs"> 
+                <group string="Costs Rent" name="rent_costs">
                     <field name="cost_rent"/>
                 </group>
             </group>

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import _, api, fields, models, fields
+from odoo import _, api, fields, models
 
 
 class StockMove(models.Model):
@@ -11,7 +11,7 @@ class StockMove(models.Model):
     routing_id = fields.Many2one(
         related='production_id.routing_id'
     )
-    
+
     @api.depends('product_id', 'move_lot_ids', 'product_id.weight')
     def _compute_cost_unit(self):
         for r in self:

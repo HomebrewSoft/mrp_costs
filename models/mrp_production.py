@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import _, api, fields, models, fields
+from odoo import _, api, fields, models
 
 
 class MRPProduction(models.Model):
@@ -62,7 +62,7 @@ class MRPProduction(models.Model):
     def _compute_cost_total(self):
         for record in self:
             record.cost_total = record.cost + record.sale_cost
-    
+
     @api.depends('routing_id.rent_kilo', 'weight', 'move_finished_ids.quantity_done')
     def _compute_rent(self):
         for record in self:
