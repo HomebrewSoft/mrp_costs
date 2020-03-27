@@ -3,10 +3,12 @@ from odoo import _, api, fields, models
 
 
 class MRPCostsWizard(models.TransientModel):
+    _inherit = 'res.company'
     _name = 'mrp.costs_wizard'
 
     rent = fields.Float(
         required=True,
+        default=lambda self: self.env.user.company_id['cost_rent'],
     )
     date_start = fields.Datetime(
         # default=fields.Date.context_today,
