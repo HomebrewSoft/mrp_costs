@@ -8,3 +8,7 @@ class MRPConfigSettings(models.TransientModel):
     cost_rent = fields.Float(
         related='company_id.cost_rent',
     )
+    transport_cost = fields.Float(
+        related='company_id.transport_cost',
+    )
+    

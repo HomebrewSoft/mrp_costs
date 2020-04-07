@@ -8,7 +8,8 @@ class MRPProduction(models.Model):
     waste = fields.Float(
         related='bom_id.waste',
     )
-    man_hour = fields.Float(  # TODO
+    man_hour = fields.Float(
+        related='routing_id.man_hour',
     )
     rent = fields.Float(  # TODO
         compute='_compute_rent',

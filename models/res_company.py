@@ -8,3 +8,5 @@ class Company(models.Model):
 
     cost_rent = fields.Float(
     )
+    transport_cost = fields.Float(
+    )

@@ -8,6 +8,8 @@
             <group name="logistics" position="before">
                 <group string="Costs Rent" name="rent_costs">
                     <field name="cost_rent"/>
+                    <field name="transport_cost"/>
+
                 </group>
             </group>
         </field>

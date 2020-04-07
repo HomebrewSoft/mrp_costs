@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="mrp_routing_man_hour_view_form">
+        <field name="name">mrp.routing.man_hour.view.form</field>
+        <field name="inherit_id" ref="mrp.mrp_routing_form_view"/>
+        <field name="model">mrp.routing</field>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="man_hour"/>>
+            </field>
+        </field>
+    </record>
+</odoo>

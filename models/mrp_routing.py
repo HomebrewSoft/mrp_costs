@@ -7,7 +7,9 @@ class MRPRouting(models.Model):
 
     rent_kilo = fields.Float(
     )
-
+    man_hour = fields.Float(
+    )
+    
     def _get_produced_by_product_ids(self, product_ids):
         for record in self:
             workorder_ids = record.operation_ids.mapped('workorder_ids')

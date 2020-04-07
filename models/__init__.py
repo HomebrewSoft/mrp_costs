@@ -11,3 +11,5 @@ from . import mrp_production
 from . import mrp_costs_wizard
 from . import res_company
 from . import mrp_config
+from . import mrp_list_delivery
+

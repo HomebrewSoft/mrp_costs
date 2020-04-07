@@ -6,6 +6,10 @@ class MRPCostsWizard(models.TransientModel):
     _inherit = 'res.company'
     _name = 'mrp.costs_wizard'
 
+    transport_cost = fields.Float(
+        required=True,
+        default=lambda self: self.env.user.company_id['transport_cost'],
+    )
     rent = fields.Float(
         required=True,
         default=lambda self: self.env.user.company_id['cost_rent'],
@@ -18,6 +22,7 @@ class MRPCostsWizard(models.TransientModel):
         # default=fields.Date.context_today,
         required=True,
     )
+
 
     @api.multi
     def calculate(self):
