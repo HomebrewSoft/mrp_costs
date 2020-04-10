@@ -9,7 +9,7 @@
                 <group string="Costs Rent" name="rent_costs">
                     <field name="cost_rent"/>
                     <field name="transport_cost"/>
-
+                    <field name="waste"/>
                 </group>
             </group>
         </field>

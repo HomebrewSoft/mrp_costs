@@ -10,3 +10,5 @@ class Company(models.Model):
     )
     transport_cost = fields.Float(
     )
+    waste = fields.Float(
+    )

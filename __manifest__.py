@@ -16,7 +16,6 @@
         'views/product_template.xml',
         'views/mrp_costs_wizard.xml',
         'views/mrp_config.xml',
-        'views/mrp_list_delivery.xml',
         'views/mrp_routing.xml',
     ],
 }

@@ -13,7 +13,11 @@ class MRPCostsWizard(models.TransientModel):
     rent = fields.Float(
         required=True,
         default=lambda self: self.env.user.company_id['cost_rent'],
-    )
+    )    
+    waste = fields.Float(
+        required=True,
+        default=lambda self: self.env.user.company_id['waste'],
+    )    
     date_start = fields.Datetime(
         # default=fields.Date.context_today,
         required=True,
@@ -22,7 +26,6 @@ class MRPCostsWizard(models.TransientModel):
         # default=fields.Date.context_today,
         required=True,
     )
-
 
     @api.multi
     def calculate(self):

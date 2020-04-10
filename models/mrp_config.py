@@ -11,4 +11,6 @@ class MRPConfigSettings(models.TransientModel):
     transport_cost = fields.Float(
         related='company_id.transport_cost',
     )
-    
+    waste = fields.Float(
+        related='company_id.waste',
+    )
