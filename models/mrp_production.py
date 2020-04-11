@@ -11,17 +11,18 @@ class MRPProduction(models.Model):
     man_hour = fields.Float(
         related='routing_id.man_hour',
     )
-    rent = fields.Float(  # TODO
+    rent = fields.Float(
         compute='_compute_rent',
     )
-    transport = fields.Float(  # TODO
+    transport = fields.Float(
     )
     cost = fields.Float(
         compute='_compute_cost',
         string='Raw material cost',
     )
-    sale_percentage = fields.Float(  # TODO
+    sale_percentage = fields.Float(
         string='Sale (%)',
+        related='product_id.sale_percentage',
     )
     sale_cost = fields.Float(
         compute='_get_sale_cost'

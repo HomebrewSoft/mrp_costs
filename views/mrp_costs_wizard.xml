@@ -12,7 +12,6 @@
                 <group>
                     <field name="rent"/>
                     <field name="transport_cost"/>
-                    <field name="waste"/>
                 </group>
                 <footer>
                     <button name="calculate" type="object" string="Calculate" class="oe_highlight"/>

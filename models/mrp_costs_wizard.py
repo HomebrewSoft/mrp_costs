@@ -3,7 +3,6 @@ from odoo import _, api, fields, models
 
 
 class MRPCostsWizard(models.TransientModel):
-    _inherit = 'res.company'
     _name = 'mrp.costs_wizard'
 
     transport_cost = fields.Float(
@@ -13,11 +12,7 @@ class MRPCostsWizard(models.TransientModel):
     rent = fields.Float(
         required=True,
         default=lambda self: self.env.user.company_id['cost_rent'],
-    )    
-    waste = fields.Float(
-        required=True,
-        default=lambda self: self.env.user.company_id['waste'],
-    )    
+    )
     date_start = fields.Datetime(
         # default=fields.Date.context_today,
         required=True,
@@ -43,4 +38,11 @@ class MRPCostsWizard(models.TransientModel):
             ])
             kilos = sum(map(lambda move_id: move_id.product_uom_qty * move_id.product_id.weight, move_ids))
             routing_id.rent_kilo = (rent_routing / kilos) if kilos else 0
+        production_ids = self.env['mrp.production'].search([
+            ('date_finished', '>=', self.date_start),
+            ('date_finished', '<', self.date_end),
+        ])
+        production_ids.write({
+            'transport': self.transport_cost,
+        })
         return {}

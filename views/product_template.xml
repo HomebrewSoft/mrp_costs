@@ -10,6 +10,9 @@
                 <field name="weight_total"/>
                 <field name="meters"/>
             </div>
+            <div name="standard_price_uom" position="after">
+                <field name="sale_percentage"/>
+            </div>
         </field>
     </record>
 </odoo>

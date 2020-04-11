@@ -14,6 +14,9 @@ class ProductTemplate(models.Model):
     )
     meters = fields.Float(
     )
+    sale_percentage = fields.Float(  # TODO in settings
+        string='Sale (%)',
+    )
 
     @api.depends('waste', 'weight')
     def _compute_weight_total(self):
