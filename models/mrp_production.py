@@ -69,4 +69,4 @@ class MRPProduction(models.Model):
     def _compute_rent(self):
         for record in self:
             if record.routing_id:
-                record.rent = record.routing_id.rent_kilo * record.weight * sum(map(lambda move: move.quantity_done, record.move_finished_ids))
+                record.rent = record.routing_id.rent_kilo
