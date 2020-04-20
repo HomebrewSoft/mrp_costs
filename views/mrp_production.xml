@@ -15,13 +15,16 @@
                 <field name="waste"/>
                 <field name="weight_total"/>
                 <field name="meters"/>
+                <field name="cost_coil"/>
+                <field name="cost_bag"/>
+                <field name="cost_tube"/>
+                <field name="cost_other"/>
                 <field name="man_hour"/>
                 <field name="rent"/>
                 <field name="transport"/>
                 <field name="cost"/>
                 <field name="sale_cost"/>
                 <field name="cost_total"/>
-                <field name="produced"/>
             </tree>
         </field>
     </record>
@@ -34,38 +37,4 @@
     </record>
 
     <menuitem id="mrp_cost" parent="mrp.menu_mrp_reporting" name="Costs" action="mrp_cost_action"/>
-
-    <!-- <record id="mrp_production_cost_view_form" model="ir.ui.view">
-        <field name="name">mrp.production.cost.view.form</field>
-        <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
-        <field name="arch" type="xml">
-            <notebook position="inside">
-                <page string="Costs">
-                    <group string="Material costs">
-                        <field name="move_raw_ids">
-                            <tree>
-                                <field name="state" invisible="1"/>
-                                <field name="product_id"/>
-                                <field name="cost_unit" sum="Material costs"/>
-                            </tree>
-                        </field>
-                    </group>
-                    <group string="Additional costs" col="4">
-                        <field name="man_hour" widget="monetary"/>
-                        <field name="rent" widget="monetary"/>
-                        <field name="transport" widget="monetary"/>
-                    </group>
-                    <group col="4" string="Sale">
-                        <field name="cost" widget="monetary"/>
-                        <field name="sale_percentage"/>
-                    </group>
-                    <h2>
-                        <label for="cost_total"/>
-                        <field name="cost_total" widget="monetary"/>
-                    </h2>
-                </page>
-            </notebook>
-        </field>
-    </record> -->
 </odoo>

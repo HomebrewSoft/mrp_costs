@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'MRP Costs',
-    'version': '1.1.0',
+    'version': '1.2.0',
     'author': 'HomebrewSoft',
     'website': 'https://github.com/HomebrewSoft/mrp_costs',
     'depends': [
@@ -10,6 +10,8 @@
         'stock',
     ],
     'data': [
+        # data
+        'data/product_category.xml',
         # views
         'views/mrp_bom.xml',
         'views/mrp_production.xml',
